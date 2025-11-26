@@ -11,6 +11,8 @@ aliases=$(
 EOF
 )
 
+source "${HOME}/.bashrc"
+
 echo "${aliases}" >>"${HOME}/.bashrc"
 echo "Aliases added to .bashrc"
 
