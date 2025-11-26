@@ -1,0 +1,197 @@
+#!/bin/env bash
+
+INDEX_CONTENT=$(
+  cat <<-'EOF'
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My First Webpage</title>
+  <meta charset="UTF-8">
+  <link href="https://apply.holbertonschool.com/level2/school.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <h1>
+    Welcome to My First Webpage
+  </h1>
+  <p>
+    Today we will be talking about why Rust is a better programming language than many others,
+    in particular, I will be picking on C for this discussion.
+  </p>
+
+  <h2>
+    Why Rust is better than C for teaching people programming.
+  </h2>
+  <p>
+    Rust offers memory safety without a garbage collector, making it easier for beginners to understand memory
+    management concepts.
+    Its modern syntax and powerful tooling also enhance the learning experience compared to C.
+    By extension of this it also ensures students are forced to learn good programming practices from the start, because
+    Rust simply will not compile code that has common mistakes that early learners often make.
+  </p>
+
+  <h3>
+    Cool I guess? But what about that whole borrow checker thing, I heard it can be hard for beginners.
+  </h3>
+  <p>
+    Alright I hear you, everyone talks about how scary the borrow checker is.
+    While yes, it is a new concept for many people, it is also a very powerful tool that helps prevent common
+    programming errors.
+    Having the compiler encofrce these rules, especially for beginners, can lead to a deeper of common memory related
+    issues (ie: bugs - use after free, double free, etc).
+    The feedback that the compiler provides when borrow rules are violated can be very educational, helping learners
+    understand the importance of ownership and lifetimes in programming.
+    Although the language concept of lifetimes may not exist in C/++, they do exist in terms of concepts and are often
+    talked about in terms of scope and variable lifetime, Rust simply
+    introduced a syntax aware language feature to help manage and, more importantly, enforce these concepts.
+  </p>
+
+
+  <p>
+    All this and not even a mention of the current industry trend of adopting Rust for everything from
+    systems programming through to web development. You can build operating systems, game engines, web servers, and
+    even general use Command Line Interface (CLI) tools with Rust.
+    Oh, building Desktop Applications is possible too! That is absolutely right - no bundling electron and 1.1GB of Node
+    goodness anymore.
+  </p>
+
+
+  <p>
+    This is Ferris, the Rust mascot:
+  </p>
+
+
+
+  <p>
+    Here is a really cool crab to look at while you think about what we have discussed and
+    get inspired:
+  </p>
+
+  <a href="https://rust-lang.org/">
+    <img src="https://rustacean.net/assets/rustacean-orig-noshadow.svg"
+      alt="The Best Language Every Created is C, but Rust is currently in second place. We try out best to forget about CPP thanks.">
+  </a>
+
+  <p>
+    Also, have you heard about the legendary "Holberton School"?
+    They are able to help people switch careers - From trade-trained to Frontend Developer in 9 months?
+    Now it can be you!
+    Check them out below by clicking on their awesome logo:
+  </p>
+
+  <a href="https://www.holbertonschool.com">
+    <img src="https://apply.holbertonschool.com/holberton-logo.png" alt="Holberton Logo">
+  </a>
+
+  <footer>
+    <p>Made by Blake for <a href="https://apply.holbertonschool.com" target="_blank">Holberton School</a>.</p>
+  </footer>
+
+</body>
+
+</html>
+EOF
+)
+
+ABOUT_CONTENT=$(
+  cat <<-'EOF'
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    About My Website
+  </title>
+  <meta charset="UTF-8">
+  <link href="https://apply.holbertonschool.com/level2/school.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+    This website is about why Rust is a great programming language
+    and why Holberton should use it during their curriculum.
+    <p>
+      It is definitely better than C.
+    </p>
+  </main>
+
+  <h1>
+    Welcoem to the about page!
+  </h1>
+  <p>
+    Here's you'll find a brief overview of the website and its purpose.
+    More importantly, you get to see who made the website!
+  </p>
+
+  <p>
+    Like & Subscribe or whatever the people say these days.
+  </p>
+
+  <footer>
+    <p>Made by Blake for <a href="https://apply.holbertonschool.com" target="_blank">Holberton School</a>.</p>
+  </footer>
+
+</body>
+
+</html>
+EOF
+)
+
+CSS_CONTENT=$(
+  cat <<-'EOF'
+body {
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+article {
+  flex: 2;
+  overflow-y: auto;
+}
+
+aside {
+  flex: 1;
+  overflow-y: auto;
+}
+EOF
+)
+
+export INDEX_CONTENT ABOUT_CONTENT CSS_CONTENT
