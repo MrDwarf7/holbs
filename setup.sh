@@ -8,6 +8,7 @@ aliases=$(
   alias cls="clear"
   alias ca="clear; ls -lah --color=always"
   alias vim="nvim"
+  alias gpl="git pull"
 EOF
 )
 
