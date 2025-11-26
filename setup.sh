@@ -27,4 +27,13 @@ EOF
 echo "Installing: "
 echo "${PKGS[@]}"
 
-apt install -y "${PKGS[@]}"
+# if we don't have any of the packages, install them
+# first check if the package is already installed
+
+if ! dpkg -s "${PKGS[@]}" &>/dev/null; then
+  echo "Some packages are not installed. Installing..."
+  apt install -y "${PKGS[@]}"
+else
+  echo "All packages are already installed."
+  exit 0
+fi
