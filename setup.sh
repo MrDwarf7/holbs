@@ -14,4 +14,13 @@ EOF
 echo "${aliases}" >>"${HOME}/.bashrc"
 echo "Aliases added to .bashrc"
 
-apt install -y neovim htop
+PKGS=$(
+  cat <<-'EOF'
+  neovim
+  htop
+EOF
+)
+
+echo "Installing: "
+echo "${PKGS[@]}"
+apt install -y "${PKGS[@]}"
