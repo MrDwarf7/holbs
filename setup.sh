@@ -17,13 +17,14 @@ source "${HOME}/.bashrc"
 echo "${aliases}" >>"${HOME}/.bashrc"
 echo "Aliases added to .bashrc"
 
-PKGS=$(
+mapfile -t PKGS < <(
   cat <<-'EOF'
-  neovim
-  htop
+neovim
+htop
 EOF
 )
 
 echo "Installing: "
 echo "${PKGS[@]}"
+
 apt install -y "${PKGS[@]}"
