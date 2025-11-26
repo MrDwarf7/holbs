@@ -3,12 +3,12 @@ E_CWD="$(pwd)"
 
 aliases=$(
   cat <<-'EOF'
-  alias l="ls -lah --color=always"
-  alias ls="ls -lah --color=always"
-  alias cls="clear"
-  alias ca="clear; ls -lah --color=always"
-  alias vim="nvim"
-  alias gpl="git pull"
+alias l="ls -lah --color=always"
+alias ls="ls -lah --color=always"
+alias cls="clear"
+alias ca="clear; ls -lah --color=always"
+alias vim="nvim"
+alias gpl="git pull"
 EOF
 )
 
